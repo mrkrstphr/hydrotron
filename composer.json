@@ -1,0 +1,25 @@
+{
+  "name": "mrkrstphr/hydrotron",
+  "description": "Hydrotron aids in hydrating PHP objects",
+  "authors": [
+    {
+      "name": "Kristopher Wilson",
+      "email": "kristopherwilson@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "mrkrstphr\\Hydrotron\\": "."
+    }
+  },
+  "require": {
+    "php": ">=7.0,<=8.0",
+    "mrkrstphr/instantiator": "^1.0"
+  },
+  "require-dev": {
+    "peridot-php/peridot": "^1.17",
+    "peridot-php/leo": "^1.4",
+    "squizlabs/php_codesniffer": "^2.5"
+  }
+}
