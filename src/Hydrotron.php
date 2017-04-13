@@ -3,6 +3,7 @@
 namespace mrkrstphr\Hydrotron;
 
 use mrkrstphr\Instantiator\Instantiator;
+use RuntimeException;
 
 /**
  * Class Hydrotron
@@ -32,9 +33,9 @@ class Hydrotron
     /**
      * @param string $attr
      * @param string $className
-     * @param array ...$callbacks
+     * @param array $callbacks
      */
-    public function instantiateWhen($attr, $className, ...$callbacks)
+    public function instantiateWhen($attr, $className, array $callbacks)
     {
         if (!$this->instantiator) {
             $this->instantiator = new Instantiator();
@@ -48,13 +49,18 @@ class Hydrotron
 
     /**
      * @param $attr
-     * @param array ...$callbacks
+     * @return $this
      */
-    public function when($attr, ...$callbacks)
+    public function when($attr)
     {
+        $callbacks = func_get_args();
+        array_shift($callbacks);
+
         if (array_key_exists($attr, $this->data)) {
             $this->runCallbacks($this->data[$attr], $callbacks);
         }
+
+        return $this;
     }
 
     /**
@@ -63,8 +69,12 @@ class Hydrotron
      */
     protected function runCallbacks($value, array $callbacks)
     {
-        foreach ($callbacks as $callback) {
-            $value = $callback($value);
+        foreach ($callbacks as $index => $callback) {
+            if (is_callable($callback)) {
+                $value = $callback($value);
+            } else {
+                throw new RuntimeException('Invalid callback supplied at index ' . $index);
+            }
         }
     }
 }
