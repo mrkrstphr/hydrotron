@@ -64,7 +64,7 @@ class Hydrotron
     protected function runCallbacks($value, array $callbacks)
     {
         foreach ($callbacks as $callback) {
-            $callback($value);
+            $value = $callback($value);
         }
     }
 }
