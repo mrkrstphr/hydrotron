@@ -4,10 +4,11 @@ sudo: false
 
 php:
   - 7.0
+  - 7
 
 install:
   - composer install
 
 script:
-  - vendor/bin/phpcs --standard=PSR2 src
-  - vendor/bin/peridot
+  - composer check-style
+  - composer test

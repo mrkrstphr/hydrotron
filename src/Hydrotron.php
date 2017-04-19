@@ -3,6 +3,8 @@
 namespace mrkrstphr\Hydrotron;
 
 use mrkrstphr\Instantiator\Instantiator;
+use Peridot\Leo\ObjectPath\ObjectPath;
+use RuntimeException;
 
 /**
  * Class Hydrotron
@@ -26,7 +28,7 @@ class Hydrotron
      */
     public function __construct(array $data)
     {
-        $this->data = $data;
+        $this->data = new ObjectPath($data);
     }
 
     /**
@@ -40,8 +42,11 @@ class Hydrotron
             $this->instantiator = new Instantiator();
         }
 
-        if (array_key_exists($attr, $this->data)) {
-            $instance = $this->instantiator->instantiate($className, $this->data);
+        $value = $this->data->get($attr);
+
+        if ($value) {
+            $value = $value->getPropertyValue();
+            $instance = $this->instantiator->instantiate($className, is_array($value) ? $value : []);
             $this->runCallbacks($instance, $callbacks);
         }
     }
@@ -52,8 +57,10 @@ class Hydrotron
      */
     public function when($attr, ...$callbacks)
     {
-        if (array_key_exists($attr, $this->data)) {
-            $this->runCallbacks($this->data[$attr], $callbacks);
+        $value = $this->data->get($attr);
+
+        if ($value) {
+            $this->runCallbacks($value->getPropertyValue(), $callbacks);
         }
     }
 
@@ -63,8 +70,12 @@ class Hydrotron
      */
     protected function runCallbacks($value, array $callbacks)
     {
-        foreach ($callbacks as $callback) {
-            $value = $callback($value);
+        foreach ($callbacks as $index => $callback) {
+            if (is_callable($callback)) {
+                $value = $callback($value);
+            } else {
+                throw new RuntimeException('Invalid callback supplied at index ' . $index);
+            }
         }
     }
 }
