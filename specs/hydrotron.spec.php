@@ -36,6 +36,27 @@ describe(Hydrotron::class, function () {
 
             expect($value1)->to->be->null();
         });
+
+        it('should allow for multidimensional array traversal', function () {
+            $hydro = new Hydrotron(['foo' => ['bar' => 5]]);
+            $finalValue = null;
+
+            $callback1 = function ($value) {
+                return $value * 2;
+            };
+
+            $callback2 = function ($value) {
+                return $value * 3;
+            };
+
+            $callback3 = function ($value) use (&$finalValue) {
+                $finalValue = $value;
+            };
+
+            $hydro->when('foo[bar]', $callback1, $callback2, $callback3);
+
+            expect($finalValue)->to->equal(30);
+        });
     });
 
     describe('instantiateWhen()', function () {

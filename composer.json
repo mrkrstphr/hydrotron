@@ -15,7 +15,8 @@
   },
   "require": {
     "php": ">=5.5,<=8.0",
-    "mrkrstphr/instantiator": "^1.0"
+    "mrkrstphr/instantiator": "^1.0",
+    "peridot-php/object-path": "^1.0"
   },
   "require-dev": {
     "peridot-php/peridot": "^1.17",

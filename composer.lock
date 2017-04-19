@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2d85dac484af4bc3004486dd6c75755f",
+    "content-hash": "6bbfaee888e079cbf89169702f0d0201",
     "packages": [
         {
             "name": "mrkrstphr/instantiator",
@@ -46,6 +46,50 @@
             ],
             "description": "Instantiate Objects in PHP",
             "time": "2017-04-13T13:19:45+00:00"
+        },
+        {
+            "name": "peridot-php/object-path",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/peridot-php/object-path.git",
+                "reference": "73739d0a1460a71499336fc11c63e8883c8811d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/peridot-php/object-path/zipball/73739d0a1460a71499336fc11c63e8883c8811d3",
+                "reference": "73739d0a1460a71499336fc11c63e8883c8811d3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "peridot-php/peridot-jumpstart": "~1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Peridot\\ObjectPath\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brian Scaturro",
+                    "email": "scaturrob@gmail.com"
+                }
+            ],
+            "description": "A string syntax to fetch values from array and object hierarchies",
+            "keywords": [
+                "array",
+                "object",
+                "traversal"
+            ],
+            "time": "2015-07-24T11:35:27+00:00"
         }
     ],
     "packages-dev": [
