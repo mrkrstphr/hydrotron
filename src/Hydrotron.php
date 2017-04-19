@@ -33,16 +33,19 @@ class Hydrotron
     /**
      * @param string $attr
      * @param string $className
-     * @param array $callbacks
      */
-    public function instantiateWhen($attr, $className, array $callbacks)
+    public function instantiateWhen($attr, $className)
     {
+        $callbacks = func_get_args();
+        array_shift($callbacks);
+        array_shift($callbacks);
+
         if (!$this->instantiator) {
             $this->instantiator = new Instantiator();
         }
 
         if (array_key_exists($attr, $this->data)) {
-            $instance = $this->instantiator->instantiate($className, $this->data);
+            $instance = $this->instantiator->instantiate($className, $this->data[$attr]);
             $this->runCallbacks($instance, $callbacks);
         }
     }
