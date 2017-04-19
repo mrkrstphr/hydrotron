@@ -4,7 +4,6 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6986749eb494b2a184330f1309357818",
     "content-hash": "2d85dac484af4bc3004486dd6c75755f",
     "packages": [
         {
@@ -13,16 +12,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mrkrstphr/instantiator.git",
-                "reference": "aaa5380be71282646205f74ef76a8744d606003b"
+                "reference": "fae563d27344c66ee17cc8a29f775ec185c29231"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mrkrstphr/instantiator/zipball/aaa5380be71282646205f74ef76a8744d606003b",
-                "reference": "aaa5380be71282646205f74ef76a8744d606003b",
+                "url": "https://api.github.com/repos/mrkrstphr/instantiator/zipball/fae563d27344c66ee17cc8a29f775ec185c29231",
+                "reference": "fae563d27344c66ee17cc8a29f775ec185c29231",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.0,<=8.0"
+                "php": ">=5.5,<=8.0"
             },
             "require-dev": {
                 "peridot-php/leo": "^1.4",
@@ -46,7 +45,7 @@
                 }
             ],
             "description": "Instantiate Objects in PHP",
-            "time": "2016-02-29 21:20:25"
+            "time": "2017-04-13T13:19:45+00:00"
         }
     ],
     "packages-dev": [
@@ -94,34 +93,35 @@
                 "event-dispatcher",
                 "event-emitter"
             ],
-            "time": "2012-11-02 14:49:47"
+            "time": "2012-11-02T14:49:47+00:00"
         },
         {
             "name": "peridot-php/leo",
-            "version": "1.5.0",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/peridot-php/leo.git",
-                "reference": "5ff1a9481faa37a55f5c6569379858dca01312f6"
+                "reference": "31dbdcbcd8383864caae1996ce62ad9f133d8de5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/peridot-php/leo/zipball/5ff1a9481faa37a55f5c6569379858dca01312f6",
-                "reference": "5ff1a9481faa37a55f5c6569379858dca01312f6",
+                "url": "https://api.github.com/repos/peridot-php/leo/zipball/31dbdcbcd8383864caae1996ce62ad9f133d8de5",
+                "reference": "31dbdcbcd8383864caae1996ce62ad9f133d8de5",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0"
+                "php": ">=5.4"
             },
             "require-dev": {
-                "peridot-php/peridot-jumpstart": "~1.0",
-                "peridot-php/peridot-prophecy-plugin": "~1.0",
-                "satooshi/php-coveralls": "~0.6"
+                "apigen/apigen": "^4",
+                "friendsofphp/php-cs-fixer": "^1",
+                "peridot-php/peridot-jumpstart": "^1",
+                "peridot-php/peridot-prophecy-plugin": "^1"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Peridot\\Leo\\": "src/"
+                    "Peridot\\Leo\\": "src"
                 },
                 "files": [
                     "src/Interfaces/_interface.bdd.php"
@@ -145,33 +145,32 @@
                 "matcher",
                 "testing"
             ],
-            "time": "2016-03-02 04:33:43"
+            "time": "2016-09-21T03:52:31+00:00"
         },
         {
             "name": "peridot-php/peridot",
-            "version": "1.17.0",
+            "version": "1.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/peridot-php/peridot.git",
-                "reference": "773c456cf1752c4d3cb249ae85db39651d13e8dd"
+                "reference": "1c573868d856cee7fc9ba89f6a82730f79a3685e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/peridot-php/peridot/zipball/773c456cf1752c4d3cb249ae85db39651d13e8dd",
-                "reference": "773c456cf1752c4d3cb249ae85db39651d13e8dd",
+                "url": "https://api.github.com/repos/peridot-php/peridot/zipball/1c573868d856cee7fc9ba89f6a82730f79a3685e",
+                "reference": "1c573868d856cee7fc9ba89f6a82730f79a3685e",
                 "shasum": ""
             },
             "require": {
-                "evenement/evenement": "2.0.*",
-                "peridot-php/peridot-scope": "~1.0",
-                "php": ">=5.4.0",
-                "phpunit/php-timer": "~1.0",
-                "symfony/console": "~2.0"
+                "evenement/evenement": "^2",
+                "peridot-php/peridot-scope": "^1",
+                "php": ">=5.4",
+                "phpunit/php-timer": "^1",
+                "symfony/console": "^2|^3"
             },
             "require-dev": {
-                "codegyre/robo": "~0.4",
-                "phpunit/php-code-coverage": "~2.0",
-                "satooshi/php-coveralls": "~0.6"
+                "consolidation/robo": "^0.4",
+                "phpunit/php-code-coverage": "^2"
             },
             "bin": [
                 "bin/peridot"
@@ -203,7 +202,7 @@
                 "php",
                 "testing"
             ],
-            "time": "2016-02-23 00:52:05"
+            "time": "2017-01-19T01:11:09+00:00"
         },
         {
             "name": "peridot-php/peridot-scope",
@@ -242,26 +241,34 @@
                 }
             ],
             "description": "Scopes for function binding and mixins",
-            "time": "2016-02-22 13:27:54"
+            "time": "2016-02-22T13:27:54+00:00"
         },
         {
             "name": "phpunit/php-timer",
-            "version": "1.0.7",
+            "version": "1.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-timer.git",
-                "reference": "3e82f4e9fc92665fafd9157568e4dcb01d014e5b"
+                "reference": "3dcf38ca72b158baf0bc245e9184d3fdffa9c46f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/3e82f4e9fc92665fafd9157568e4dcb01d014e5b",
-                "reference": "3e82f4e9fc92665fafd9157568e4dcb01d014e5b",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/3dcf38ca72b158baf0bc245e9184d3fdffa9c46f",
+                "reference": "3dcf38ca72b158baf0bc245e9184d3fdffa9c46f",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": "^5.3.3 || ^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
             "autoload": {
                 "classmap": [
                     "src/"
@@ -283,23 +290,71 @@
             "keywords": [
                 "timer"
             ],
-            "time": "2015-06-21 08:01:12"
+            "time": "2017-02-26T11:10:40+00:00"
         },
         {
-            "name": "squizlabs/php_codesniffer",
-            "version": "2.5.1",
+            "name": "psr/log",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "6731851d6aaf1d0d6c58feff1065227b7fda3ba8"
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/6731851d6aaf1d0d6c58feff1065227b7fda3ba8",
-                "reference": "6731851d6aaf1d0d6c58feff1065227b7fda3ba8",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
+                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
                 "shasum": ""
             },
             "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Log\\": "Psr/Log/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "homepage": "https://github.com/php-fig/log",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "time": "2016-10-10T12:19:37+00:00"
+        },
+        {
+            "name": "squizlabs/php_codesniffer",
+            "version": "2.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
+                "reference": "d7cf0d894e8aa4c73712ee4a331cc1eaa37cdc7d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/d7cf0d894e8aa4c73712ee4a331cc1eaa37cdc7d",
+                "reference": "d7cf0d894e8aa4c73712ee4a331cc1eaa37cdc7d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-simplexml": "*",
                 "ext-tokenizer": "*",
                 "ext-xmlwriter": "*",
                 "php": ">=5.1.2"
@@ -360,40 +415,43 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2016-01-19 23:39:10"
+            "time": "2017-03-01T22:17:45+00:00"
         },
         {
             "name": "symfony/console",
-            "version": "v2.8.3",
+            "version": "v3.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "56cc5caf051189720b8de974e4746090aaa10d44"
+                "reference": "c30243cc51f726812be3551316b109a2f5deaf8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/56cc5caf051189720b8de974e4746090aaa10d44",
-                "reference": "56cc5caf051189720b8de974e4746090aaa10d44",
+                "url": "https://api.github.com/repos/symfony/console/zipball/c30243cc51f726812be3551316b109a2f5deaf8d",
+                "reference": "c30243cc51f726812be3551316b109a2f5deaf8d",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.9",
+                "php": ">=5.5.9",
+                "symfony/debug": "~2.8|~3.0",
                 "symfony/polyfill-mbstring": "~1.0"
             },
             "require-dev": {
                 "psr/log": "~1.0",
-                "symfony/event-dispatcher": "~2.1|~3.0.0",
-                "symfony/process": "~2.1|~3.0.0"
+                "symfony/event-dispatcher": "~2.8|~3.0",
+                "symfony/filesystem": "~2.8|~3.0",
+                "symfony/process": "~2.8|~3.0"
             },
             "suggest": {
                 "psr/log": "For using the console logger",
                 "symfony/event-dispatcher": "",
+                "symfony/filesystem": "",
                 "symfony/process": ""
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.8-dev"
+                    "dev-master": "3.2-dev"
                 }
             },
             "autoload": {
@@ -420,20 +478,77 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-02-28 16:20:50"
+            "time": "2017-04-04T14:33:42+00:00"
         },
         {
-            "name": "symfony/polyfill-mbstring",
-            "version": "v1.1.0",
+            "name": "symfony/debug",
+            "version": "v3.2.7",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "1289d16209491b584839022f29257ad859b8532d"
+                "url": "https://github.com/symfony/debug.git",
+                "reference": "56f613406446a4a0a031475cfd0a01751de22659"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/1289d16209491b584839022f29257ad859b8532d",
-                "reference": "1289d16209491b584839022f29257ad859b8532d",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/56f613406446a4a0a031475cfd0a01751de22659",
+                "reference": "56f613406446a4a0a031475cfd0a01751de22659",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9",
+                "psr/log": "~1.0"
+            },
+            "conflict": {
+                "symfony/http-kernel": ">=2.3,<2.3.24|~2.4.0|>=2.5,<2.5.9|>=2.6,<2.6.2"
+            },
+            "require-dev": {
+                "symfony/class-loader": "~2.8|~3.0",
+                "symfony/http-kernel": "~2.8|~3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Debug\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Debug Component",
+            "homepage": "https://symfony.com",
+            "time": "2017-03-28T21:38:24+00:00"
+        },
+        {
+            "name": "symfony/polyfill-mbstring",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-mbstring.git",
+                "reference": "e79d363049d1c2128f133a2667e4f4190904f7f4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/e79d363049d1c2128f133a2667e4f4190904f7f4",
+                "reference": "e79d363049d1c2128f133a2667e4f4190904f7f4",
                 "shasum": ""
             },
             "require": {
@@ -445,7 +560,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.3-dev"
                 }
             },
             "autoload": {
@@ -479,7 +594,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-01-20 09:13:37"
+            "time": "2016-11-14T01:06:16+00:00"
         }
     ],
     "aliases": [],
