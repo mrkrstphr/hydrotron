@@ -56,13 +56,33 @@ class Hydrotron
     }
 
     /**
-     * @deprecated Used whenKeyExists() or whenNotEmpty()
+     * @deprecated Used whenKeyExists(), whenIsNotNull(), or whenNotEmpty()
      * @param string $attr
      * @return $this
      */
     public function when($attr)
     {
-        return $this->whenNotEmpty($attr);
+        return call_user_func_array([$this, 'whenIsNotNull'], func_get_args());
+    }
+
+    /**
+     * Fires the passed callbacks when the passed $attr is a defined key and is not null.
+     *
+     * @param string $attr
+     * @return $this
+     */
+    public function whenIsNotNull($attr)
+    {
+        $callbacks = func_get_args();
+        array_shift($callbacks);
+
+        $value = $this->data->get($attr);
+
+        if ($value && $value->getPropertyValue() !== null) {
+            $this->runCallbacks($value->getPropertyValue(), $callbacks);
+        }
+
+        return $this;
     }
 
     /**
@@ -78,7 +98,7 @@ class Hydrotron
 
         $value = $this->data->get($attr);
 
-        if ($value && $value->getPropertyValue()) {
+        if ($value && !empty($value->getPropertyValue())) {
             $this->runCallbacks($value->getPropertyValue(), $callbacks);
         }
 

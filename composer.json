@@ -22,5 +22,8 @@
     "peridot-php/peridot": "^1.17",
     "peridot-php/leo": "^1.4",
     "squizlabs/php_codesniffer": "^2.5"
+  },
+  "scripts": {
+    "test": "vendor/bin/peridot"
   }
 }
