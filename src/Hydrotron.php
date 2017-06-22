@@ -4,6 +4,7 @@ namespace mrkrstphr\Hydrotron;
 
 use mrkrstphr\Instantiator\Instantiator;
 use Peridot\ObjectPath\ObjectPath;
+use Peridot\ObjectPath\ObjectPathValue;
 use RuntimeException;
 
 /**
@@ -55,17 +56,49 @@ class Hydrotron
     }
 
     /**
-     * @param $attr
+     * @deprecated Used whenKeyExists() or whenNotEmpty()
+     * @param string $attr
      * @return $this
      */
     public function when($attr)
+    {
+        return $this->whenNotEmpty($attr);
+    }
+
+    /**
+     * Fires the passed callbacks when the passed $attr is a defined key and is not empty.
+     *
+     * @param string $attr
+     * @return $this
+     */
+    public function whenNotEmpty($attr)
     {
         $callbacks = func_get_args();
         array_shift($callbacks);
 
         $value = $this->data->get($attr);
 
-        if ($value) {
+        if ($value && $value->getPropertyValue()) {
+            $this->runCallbacks($value->getPropertyValue(), $callbacks);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Fires the passed callbacks when the passed $attr is a defined key in the data array.
+     *
+     * @param string $attr
+     * @return $this
+     */
+    public function whenKeyExists($attr)
+    {
+        $callbacks = func_get_args();
+        array_shift($callbacks);
+
+        $value = $this->data->get($attr);
+
+        if ($value instanceof ObjectPathValue) {
             $this->runCallbacks($value->getPropertyValue(), $callbacks);
         }
 
